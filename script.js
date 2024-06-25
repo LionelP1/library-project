@@ -41,6 +41,8 @@ function addBookToLibrary(bookObject) {
 
 function removeBook(bookId){
     //Remove from array
+    const bookIndex = library.findIndex(book => book.bookId === bookId);
+    library.splice(bookIndex, 1);
 
     //Remove from screen
     const bookToRemove = document.getElementById(`book-${bookId}`);
@@ -72,7 +74,6 @@ function handleFormSubmit (){
     addBookToLibrary(newBook);
     bookForm.reset();
     closeModal();
-    console.log(newBook);
 }
 
 
