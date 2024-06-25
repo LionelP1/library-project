@@ -34,4 +34,31 @@ function handleFormSubmit (){
     const newBook = new Book(titleInput, authorInput, pagesInput, isReadInput);
     library.push(newBook);
     addBookToLibrary(newBook);
+    bookForm.reset();
+    closeModal();
+}
+
+
+
+
+
+
+const modal = document.querySelector(".modal");
+
+const addBook = document.querySelector(".add-book-btn");
+
+
+
+addBook.addEventListener('click', () => {
+    modal.style.display = "block";
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target == modal) {
+      closeModal();
+    }
+});
+
+function closeModal(){
+    modal.style.display = "none";
 }
