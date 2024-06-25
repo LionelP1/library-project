@@ -1,7 +1,10 @@
 let library = [];
 
+let uniqueId = 0;
 
-function Book(title, author, pages, read = false) {
+
+function Book(bookId,title, author, pages, read = false) {
+    this.bookId = bookId,
     this.title = title,
     this.author = author,
     this.pages = pages,
@@ -25,14 +28,26 @@ function addBookToLibrary(bookObject) {
     removeBtn.textContent = 'Remove';
 
     bookCard.classList.add('book-card')
+    bookCard.id = `book-${bookObject.bookId}`;
     bookCard.appendChild(title)
     bookCard.appendChild(author)
     bookCard.appendChild(pages)
+    removeBtn.addEventListener('click', () => {removeBook(bookObject.bookId)});
     buttonGroup.appendChild(readBtn)
     buttonGroup.appendChild(removeBtn)
     bookCard.appendChild(buttonGroup)
     bookGrid.appendChild(bookCard)
 }
+
+function removeBook(bookId){
+    //Remove from array
+
+    //Remove from screen
+    const bookToRemove = document.getElementById(`book-${bookId}`);
+    bookToRemove.remove();
+}
+
+
 
 //Adds all books to the screen
 function outputAllBooks() {
@@ -52,11 +67,12 @@ function handleFormSubmit (){
     let authorInput = document.getElementById('author').value;
     let pagesInput = parseInt(document.getElementById('pages').value);
     let isReadInput = document.getElementById('isRead').checked;
-    const newBook = new Book(titleInput, authorInput, pagesInput, isReadInput);
+    const newBook = new Book(uniqueId++,titleInput, authorInput, pagesInput, isReadInput);
     library.push(newBook);
     addBookToLibrary(newBook);
     bookForm.reset();
     closeModal();
+    console.log(newBook);
 }
 
 
