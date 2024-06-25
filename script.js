@@ -11,7 +11,27 @@ function Book(title, author, pages, read = false) {
 
 //Adds a book to the screen
 function addBookToLibrary(bookObject) {
-    //To do later
+    const bookCard = document.createElement('div');
+    const title = document.createElement('p');
+    const author = document.createElement('p');
+    const pages = document.createElement('p');
+    const buttonGroup = document.createElement('div');
+    const readBtn = document.createElement('button');
+    const removeBtn = document.createElement('button');
+
+    title.textContent = `Title: ${bookObject.title}`;
+    author.textContent = `Author: ${bookObject.author}`;
+    pages.textContent = `Pages: ${bookObject.pages}`;
+    removeBtn.textContent = 'Remove';
+
+    bookCard.classList.add('book-card')
+    bookCard.appendChild(title)
+    bookCard.appendChild(author)
+    bookCard.appendChild(pages)
+    buttonGroup.appendChild(readBtn)
+    buttonGroup.appendChild(removeBtn)
+    bookCard.appendChild(buttonGroup)
+    bookGrid.appendChild(bookCard)
 }
 
 //Adds all books to the screen
@@ -20,6 +40,7 @@ function outputAllBooks() {
 }
 
 const bookForm = document.getElementById('bookForm');
+const bookGrid = document.querySelector('.book-grid');
 
 bookForm.addEventListener('submit', (event) => {
     event.preventDefault();
