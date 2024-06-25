@@ -14,6 +14,7 @@ function addBookToLibrary(bookObject) {
     //To do later
 }
 
+//Adds all books to the screen
 function outputAllBooks() {
     //To do later
 }
@@ -33,6 +34,4 @@ function handleFormSubmit (){
     const newBook = new Book(titleInput, authorInput, pagesInput, isReadInput);
     library.push(newBook);
     addBookToLibrary(newBook);
-    console.log(library);
-    console.log(newBook);
 }
