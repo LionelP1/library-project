@@ -14,6 +14,9 @@ function Book(bookId,title, author, pages, read = false) {
 
 //Adds a book to the screen
 function addBookToLibrary(bookObject) {
+    let isReadColor = "#ff7f7f";
+    let buttonText = 'Not Read';
+
     const bookCard = document.createElement('div');
     const title = document.createElement('p');
     const author = document.createElement('p');
@@ -21,10 +24,16 @@ function addBookToLibrary(bookObject) {
     const readBtn = document.createElement('button');
     const removeBtn = document.createElement('button');
 
+    if(bookObject.read){
+        isReadColor = '#90ee90';
+        buttonText = 'Read';
+    }
+
     title.textContent = `Title: ${bookObject.title}`;
     author.textContent = `Author: ${bookObject.author}`;
     pages.textContent = `Pages: ${bookObject.pages}`;
-    readBtn.textContent = 'Not Read or Read';
+    readBtn.textContent = buttonText;
+    readBtn.style.backgroundColor = isReadColor;
     removeBtn.textContent = 'Remove';
 
     bookCard.classList.add('book-card');
