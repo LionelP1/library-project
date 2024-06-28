@@ -8,6 +8,7 @@ body {
   background-color: #f0eef1;
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
+  font-weight: 500;
 }
 
 header{
@@ -46,15 +47,19 @@ header a {
   margin-right: 15px;
 }
 
-
+.main-content {
+  margin-top: 20px;
+  text-align: center;
+  padding:0px 30px;
+}
 
 .book-grid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     margin-top: 30px;
+    gap: 30px;
     max-width: 1200px;
-    gap: 20px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .book-card{
@@ -68,7 +73,6 @@ header a {
   border-radius: 10px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin: 0 10px;
 }
 
 .card-button{
