@@ -18,25 +18,32 @@ function addBookToLibrary(bookObject) {
     const title = document.createElement('p');
     const author = document.createElement('p');
     const pages = document.createElement('p');
-    const buttonGroup = document.createElement('div');
     const readBtn = document.createElement('button');
     const removeBtn = document.createElement('button');
 
     title.textContent = `Title: ${bookObject.title}`;
     author.textContent = `Author: ${bookObject.author}`;
     pages.textContent = `Pages: ${bookObject.pages}`;
+    readBtn.textContent = 'Not Read or Read';
     removeBtn.textContent = 'Remove';
 
-    bookCard.classList.add('book-card')
+    bookCard.classList.add('book-card');
+    readBtn.classList.add('card-button');
+    removeBtn.classList.add('card-button');
+    readBtn.id = 'readBtn';
+    removeBtn.id = 'removeBtn';
     bookCard.id = `book-${bookObject.bookId}`;
+
     bookCard.appendChild(title)
     bookCard.appendChild(author)
     bookCard.appendChild(pages)
-    removeBtn.addEventListener('click', () => {removeBook(bookObject.bookId)});
-    buttonGroup.appendChild(readBtn)
+    /*buttonGroup.appendChild(readBtn)
     buttonGroup.appendChild(removeBtn)
-    bookCard.appendChild(buttonGroup)
+    bookCard.appendChild(buttonGroup)*/
+    bookCard.appendChild(readBtn)
+    bookCard.appendChild(removeBtn)
     bookGrid.appendChild(bookCard)
+    removeBtn.addEventListener('click', () => {removeBook(bookObject.bookId)});
 }
 
 function removeBook(bookId){
