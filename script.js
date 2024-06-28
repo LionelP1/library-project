@@ -46,14 +46,24 @@ function addBookToLibrary(bookObject) {
     bookCard.appendChild(title)
     bookCard.appendChild(author)
     bookCard.appendChild(pages)
-    /*buttonGroup.appendChild(readBtn)
-    buttonGroup.appendChild(removeBtn)
-    bookCard.appendChild(buttonGroup)*/
     bookCard.appendChild(readBtn)
     bookCard.appendChild(removeBtn)
     bookGrid.appendChild(bookCard)
     removeBtn.addEventListener('click', () => {removeBook(bookObject.bookId)});
+    readBtn.addEventListener('click', () => {
+        if(bookObject.read){
+            bookObject.read = false;
+            readBtn.style.backgroundColor = "#ff7f7f";
+            readBtn.textContent = 'Not Read';
+        }else{
+            bookObject.read = true;
+            readBtn.style.backgroundColor = "#90ee90";
+            readBtn.textContent = 'Read';
+        }
+    });
 }
+
+
 
 function removeBook(bookId){
     //Remove from array
@@ -67,10 +77,7 @@ function removeBook(bookId){
 
 
 
-//Adds all books to the screen
-function outputAllBooks() {
-    //To do later
-}
+
 
 const bookForm = document.getElementById('bookForm');
 const bookGrid = document.querySelector('.book-grid');

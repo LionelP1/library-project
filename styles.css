@@ -9,6 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 500;
+  word-wrap: break-word;
 }
 
 header{
@@ -100,7 +101,7 @@ header a {
   padding: 17px;
   border-radius: 10px;
   transition: filter 0.15s ease-in-out;
-  font-size:18px;
+  font-size:22px;
   border:none;
 }
 
