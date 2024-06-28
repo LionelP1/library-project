@@ -90,7 +90,7 @@ function handleFormSubmit (){
 
 const modal = document.querySelector(".modal");
 
-const addBook = document.querySelector(".add-book-btn");
+const addBook = document.querySelector(".bookBtn");
 
 
 
