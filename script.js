@@ -39,8 +39,6 @@ function addBookToLibrary(bookObject) {
     bookCard.classList.add('book-card');
     readBtn.classList.add('card-button');
     removeBtn.classList.add('card-button');
-    readBtn.id = 'readBtn';
-    removeBtn.id = 'removeBtn';
     bookCard.id = `book-${bookObject.bookId}`;
 
     bookCard.appendChild(title)
