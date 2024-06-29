@@ -29,7 +29,7 @@ function addBookToLibrary(bookObject) {
         buttonText = 'Read';
     }
 
-    title.textContent = `Title: ${bookObject.title}`;
+    title.textContent = `Title: "${bookObject.title}"`;
     author.textContent = `Author: ${bookObject.author}`;
     pages.textContent = `Pages: ${bookObject.pages}`;
     readBtn.textContent = buttonText;
@@ -99,13 +99,9 @@ function handleFormSubmit (){
 
 
 
-
-
-
 const modal = document.querySelector(".modal");
 
 const addBook = document.querySelector(".bookBtn");
-
 
 
 addBook.addEventListener('click', () => {
