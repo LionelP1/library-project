@@ -1,10 +1,10 @@
-# Library Management Project 📚
+# Library Project 📚
 
 ## Project Description
-The Library Management System is an web application that allows users to add, view, and manage books in a virtual library. Users can input book details such as title, author, pages, and read status. The system features a dynamic book grid and a modal form for adding new books. Books can be marked as "read" or "not read," and can be removed from the library with ease.
+The Library Project is a web application that allows users to add, view, and manage books in a virtual library. Users can input book details such as title, author, pages, and read status. The system features a dynamic book grid and a modal form for adding new books. Books can be marked as "read" or "not read," and can be removed from the library with ease.
 
 ## Live Demo
-[Library Management System Live Demo](https://lionelp1.github.io/library-project/)
+[Library Project Live Demo](https://lionelp1.github.io/library-project/)
 
 ## Features
 - **Add New Books:** Input title, author, pages, and read status to add a book to the library.
